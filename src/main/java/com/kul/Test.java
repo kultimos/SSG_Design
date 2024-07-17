@@ -1,26 +1,13 @@
 package com.kul;
 
+import java.io.IOException;
+
 public class Test {
-    public static void main(String[] args) {
-        C c = new C();
+    public static void main(String[] args) throws IOException {
+        Runtime rt = Runtime.getRuntime();
 
+        Process exec = rt.exec("");
     }
 }
 
-
-class A extends C{
-    public int test(int x, int y) {
-        return x - y;
-    }
-}
-
-class B extends C {
-    public int test(int x, int y) {
-        return x+y;
-    }
-}
-
-class C{
-
-}
 
