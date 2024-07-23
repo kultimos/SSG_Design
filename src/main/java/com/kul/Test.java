@@ -1,13 +1,13 @@
 package com.kul;
 
-import com.kul.factory.uaual.order.OrderPizza;
-import org.springframework.core.annotation.Order;
+import com.kul.abandoned.uaual.order.OrderPizza;
 
 import java.io.IOException;
+import java.util.Calendar;
 
 public class Test {
     public static void main(String[] args) throws IOException {
-        OrderPizza pizza = new OrderPizza();
+        Calendar instance = Calendar.getInstance();
     }
 }
 
