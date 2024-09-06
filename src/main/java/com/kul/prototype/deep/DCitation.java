@@ -1,6 +1,7 @@
 package com.kul.prototype.deep;
 
 import com.fasterxml.jackson.databind.ser.std.SerializableSerializer;
+import com.kul.prototype.shallow.Citation;
 
 import java.io.*;
 
@@ -26,16 +27,25 @@ public class DCitation implements Cloneable, Serializable {
      */
     @Override
     public DCitation clone() {
+        // Object的clone方法,浅拷贝
         try {
-            DCitation clone = (DCitation)super.clone();
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("C:\\Users\\t-wushuai\\Desktop\\c.txt"));
-            oos.writeObject(clone);
-            oos.close();
-
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\Users\\t-wushuai\\Desktop\\c.txt"));
-            return (DCitation) ois.readObject();
-        } catch (Exception e) {
-            throw new AssertionError();
+            return (DCitation) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
         }
+
+        // 通过序列化,深拷贝
+//        try {
+//            DCitation clone = (DCitation)super.clone();
+//            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("C:\\Users\\t-wushuai\\Desktop\\c.txt"));
+//            oos.writeObject(clone);
+//            oos.close();
+//
+//            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("C:\\Users\\t-wushuai\\Desktop\\c.txt"));
+//            return (DCitation) ois.readObject();
+//        } catch (Exception e) {
+//            throw new AssertionError();
+//        }
+
     }
 }
